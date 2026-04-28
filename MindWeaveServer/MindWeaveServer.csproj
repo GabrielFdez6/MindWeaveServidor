@@ -1,0 +1,427 @@
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9003C168-A646-40F1-91F5-FB19498083BC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MindWeaveServer</RootNamespace>
+    <AssemblyName>MindWeaveServer</AssemblyName>
+    <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <XsdCodeGenEnabled>True</XsdCodeGenEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PreferNativeArm64>true</PreferNativeArm64>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MindWeaveServer.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=9.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.9.0.0\lib\netstandard2.0\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Wcf, Version=7.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Wcf.7.0.0\lib\net472\Autofac.Integration.Wcf.dll</HintPath>
+    </Reference>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.4.0.3\lib\net472\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.6.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.10.4.0\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=4.14.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.4.14.0\lib\net47\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.10.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.TestPlatform.CoreUtilities, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TestPlatform.ObjectModel.17.13.0\lib\net462\Microsoft.TestPlatform.CoreUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TestPlatform.PlatformAbstractions, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TestPlatform.ObjectModel.17.13.0\lib\net462\Microsoft.TestPlatform.PlatformAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TestPlatform.ObjectModel.17.13.0\lib\net462\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit, Version=4.14.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.4.14.0\lib\net47\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=6.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.6.0.5\lib\net46\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.10.0.0\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.10.0.0\lib\net462\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Formats.Asn1, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Formats.Asn1.8.0.1\lib\net462\System.Formats.Asn1.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.1\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=1.4.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.1.6.0\lib\netstandard2.0\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.6.3\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppStart\Bootstrapper.cs" />
+    <Compile Include="BusinessLogic\Abstractions\IDisconnectionHandler.cs" />
+    <Compile Include="BusinessLogic\Abstractions\ILobbyInteractionService.cs" />
+    <Compile Include="BusinessLogic\Abstractions\ILobbyLifecycleService.cs" />
+    <Compile Include="BusinessLogic\Abstractions\ILobbyValidationService.cs" />
+    <Compile Include="BusinessLogic\Abstractions\INotificationService.cs" />
+    <Compile Include="BusinessLogic\Abstractions\IPlayerExpulsionService.cs" />
+    <Compile Include="BusinessLogic\Abstractions\IScoreCalculator.cs" />
+    <Compile Include="BusinessLogic\Abstractions\IUserSessionManager.cs" />
+    <Compile Include="BusinessLogic\AchievementEvaluator.cs" />
+    <Compile Include="BusinessLogic\AuthenticationLogic.cs" />
+    <Compile Include="BusinessLogic\ChatLogic.cs" />
+    <Compile Include="BusinessLogic\GameSession.cs" />
+    <Compile Include="BusinessLogic\JigsawEdgeType.cs" />
+    <Compile Include="BusinessLogic\JigsawPathGenerator.cs" />
+    <Compile Include="BusinessLogic\JigsawPieceEdges.cs" />
+    <Compile Include="BusinessLogic\Manager\GameSessionManager.cs" />
+    <Compile Include="BusinessLogic\Manager\GameStateManager.cs" />
+    <Compile Include="BusinessLogic\Abstractions\IGameStateManager.cs" />
+    <Compile Include="BusinessLogic\Manager\LobbyModerationManager.cs" />
+    <Compile Include="BusinessLogic\Manager\UserSessionManager.cs" />
+    <Compile Include="BusinessLogic\MatchmakingLogic.cs" />
+    <Compile Include="BusinessLogic\Models\GameSessionConfiguration.cs" />
+    <Compile Include="BusinessLogic\Models\LobbyActionContext.cs" />
+    <Compile Include="BusinessLogic\Models\PieceMovementContext.cs" />
+    <Compile Include="BusinessLogic\Models\ValidationResult.cs" />
+    <Compile Include="BusinessLogic\Services\DisconnectionHandler.cs" />
+    <Compile Include="BusinessLogic\Services\PlayerExpulsionService.cs" />
+    <Compile Include="BusinessLogic\Models\PlayerSessionData.cs" />
+    <Compile Include="BusinessLogic\ProfileLogic.cs" />
+    <Compile Include="BusinessLogic\PuzzleGenerator.cs" />
+    <Compile Include="BusinessLogic\PuzzleLogic.cs" />
+    <Compile Include="BusinessLogic\Models\PuzzlePieceState.cs" />
+    <Compile Include="BusinessLogic\ScoreCalculator.cs" />
+    <Compile Include="BusinessLogic\Services\LobbyInteractionService.cs" />
+    <Compile Include="BusinessLogic\Services\LobbyLifecycleService.cs" />
+    <Compile Include="BusinessLogic\Services\LobbyValidationService.cs" />
+    <Compile Include="BusinessLogic\Services\NotificationService.cs" />
+    <Compile Include="BusinessLogic\SocialLogic.cs" />
+    <Compile Include="BusinessLogic\StatsLogic.cs" />
+    <Compile Include="Contracts\DataContracts\Authentication\LoginDto.cs" />
+    <Compile Include="Contracts\DataContracts\Authentication\LoginResultDto.cs" />
+    <Compile Include="Contracts\DataContracts\Chat\ChatMessageDto.cs" />
+    <Compile Include="Contracts\DataContracts\Game\AchievementContext.cs" />
+    <Compile Include="Contracts\DataContracts\Game\MatchEndResultDto.cs" />
+    <Compile Include="Contracts\DataContracts\Game\PlayerResultDto.cs" />
+    <Compile Include="Contracts\DataContracts\Matchmaking\ExpulsionDto.cs" />
+    <Compile Include="Contracts\DataContracts\Matchmaking\GuestInvitationDto.cs" />
+    <Compile Include="Contracts\DataContracts\Matchmaking\GuestJoinRequestDto.cs" />
+    <Compile Include="Contracts\DataContracts\Matchmaking\GuestJoinResultDto.cs" />
+    <Compile Include="Contracts\DataContracts\Matchmaking\LobbyCreationResultDto.cs" />
+    <Compile Include="Contracts\DataContracts\Matchmaking\MatchmakingParticipantsStatusUpdateDto.cs" />
+    <Compile Include="Contracts\DataContracts\Profile\AvatarUpdateResultDto.cs" />
+    <Compile Include="Contracts\DataContracts\Profile\GenderDto.cs" />
+    <Compile Include="Contracts\DataContracts\Profile\PlayerSocialMediaDto.cs" />
+    <Compile Include="Contracts\DataContracts\Profile\UserProfileEditDto.cs" />
+    <Compile Include="Contracts\DataContracts\Puzzle\PuzzleDefinitionDto.cs" />
+    <Compile Include="Contracts\DataContracts\Puzzle\PuzzleInfoDto.cs" />
+    <Compile Include="Contracts\DataContracts\Puzzle\PuzzlePieceDefinitionDto.cs" />
+    <Compile Include="Contracts\DataContracts\Shared\MessageCodes.cs" />
+    <Compile Include="Contracts\DataContracts\Shared\ServiceErrorType.cs" />
+    <Compile Include="Contracts\DataContracts\Shared\ServiceFaultDto.cs" />
+    <Compile Include="Contracts\DataContracts\Social\FriendDto.cs" />
+    <Compile Include="Contracts\DataContracts\Social\FriendRequestInfoDto.cs" />
+    <Compile Include="Contracts\DataContracts\Matchmaking\LobbySettingsDto.cs" />
+    <Compile Include="Contracts\DataContracts\Matchmaking\LobbyStateDto.cs" />
+    <Compile Include="Contracts\DataContracts\Social\PlayerSearchResultDto.cs" />
+    <Compile Include="Contracts\DataContracts\Stats\AchievementDto.cs" />
+    <Compile Include="Contracts\DataContracts\Stats\MatchHistoryDto.cs" />
+    <Compile Include="Contracts\DataContracts\Shared\OperationResultDto.cs" />
+    <Compile Include="Contracts\DataContracts\Stats\PlayerMatchStatsDto.cs" />
+    <Compile Include="Contracts\DataContracts\Stats\PlayerProfileViewDto.cs" />
+    <Compile Include="Contracts\DataContracts\Stats\PlayerStatsDto.cs" />
+    <Compile Include="Contracts\DataContracts\Authentication\UserProfileDto.cs" />
+    <Compile Include="Contracts\ServiceContracts\IAuthenticationManager.cs" />
+    <Compile Include="Contracts\ServiceContracts\IChatManager.cs" />
+    <Compile Include="Contracts\ServiceContracts\IMatchmakingManager.cs" />
+    <Compile Include="Contracts\ServiceContracts\IProfileManager.cs" />
+    <Compile Include="Contracts\ServiceContracts\IPuzzleManager.cs" />
+    <Compile Include="Contracts\ServiceContracts\ISocialManager.cs" />
+    <Compile Include="Contracts\DataContracts\Puzzle\UploadResultDto.cs" />
+    <Compile Include="DataAccess\Abstractions\IFriendshipRepository.cs" />
+    <Compile Include="DataAccess\Abstractions\IGenderRepository.cs" />
+    <Compile Include="DataAccess\Abstractions\IGuestInvitationRepository.cs" />
+    <Compile Include="DataAccess\Abstractions\IMatchmakingRepository.cs" />
+    <Compile Include="DataAccess\Abstractions\IPlayerRepository.cs" />
+    <Compile Include="DataAccess\Abstractions\IPuzzleRepository.cs" />
+    <Compile Include="DataAccess\Abstractions\IStatsRepository.cs" />
+    <Compile Include="DataAccess\Achievements.cs">
+      <DependentUpon>MindWeaveDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\DifficultyLevels.cs">
+      <DependentUpon>MindWeaveDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\ExpulsionReasons.cs">
+      <DependentUpon>MindWeaveDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Friendships.cs">
+      <DependentUpon>MindWeaveDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Gender.cs">
+      <DependentUpon>MindWeaveDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\GuestInvitations.cs">
+      <DependentUpon>MindWeaveDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Matches.cs">
+      <DependentUpon>MindWeaveDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\MatchExpulsions.cs">
+      <DependentUpon>MindWeaveDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\MatchParticipants.cs">
+      <DependentUpon>MindWeaveDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\MatchStatus.cs">
+      <DependentUpon>MindWeaveDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\MindWeaveDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MindWeaveDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\MindWeaveDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MindWeaveDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\MindWeaveDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MindWeaveDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Player.cs">
+      <DependentUpon>MindWeaveDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\PlayerSocialMedias.cs">
+      <DependentUpon>MindWeaveDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\PlayerStats.cs">
+      <DependentUpon>MindWeaveDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Puzzles.cs">
+      <DependentUpon>MindWeaveDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Repositories\FriendshipRepository.cs" />
+    <Compile Include="DataAccess\Repositories\GenderRepository.cs" />
+    <Compile Include="DataAccess\Repositories\GuestInvitationRepository.cs" />
+    <Compile Include="DataAccess\Repositories\MatchmakingRepository.cs" />
+    <Compile Include="DataAccess\Repositories\PlayerRepository.cs" />
+    <Compile Include="DataAccess\Repositories\PuzzleRepository.cs" />
+    <Compile Include="DataAccess\Repositories\StatsRepository.cs" />
+    <Compile Include="DataAccess\RequestStatus.cs">
+      <DependentUpon>MindWeaveDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\SocialMediaPlatforms.cs">
+      <DependentUpon>MindWeaveDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\sysdiagrams.cs">
+      <DependentUpon>MindWeaveDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Lang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lang.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\AuthenticationManagerService.cs" />
+    <Compile Include="Services\ChatManagerService.cs" />
+    <Compile Include="Services\MatchmakingManagerService.cs" />
+    <Compile Include="Services\ProfileManagerService.cs" />
+    <Compile Include="Services\PuzzleManagerService.cs" />
+    <Compile Include="Services\SocialManagerService.cs" />
+    <Compile Include="Utilities\Abstractions\IPasswordPolicyValidator.cs" />
+    <Compile Include="Utilities\Abstractions\IPasswordService.cs" />
+    <Compile Include="Utilities\Abstractions\IServiceExceptionHandler.cs" />
+    <Compile Include="Utilities\Abstractions\IVerificationCodeService.cs" />
+    <Compile Include="Utilities\Email\Templates\BaseEmailTemplate.cs" />
+    <Compile Include="Utilities\Email\Templates\GuestInviteEmailTemplate.cs" />
+    <Compile Include="Utilities\Email\Templates\PasswordRecoveryEmailTemplate.cs" />
+    <Compile Include="Utilities\Email\Templates\VerificationEmailTemplate.cs" />
+    <Compile Include="Utilities\Email\IEmailService.cs" />
+    <Compile Include="Utilities\Email\IEmailTemplate.cs" />
+    <Compile Include="Utilities\FriendshipStatusConstants.cs" />
+    <Compile Include="Utilities\ImageUtilities.cs" />
+    <Compile Include="Utilities\LobbyCodeGenerator.cs" />
+    <Compile Include="Utilities\PasswordHasher.cs" />
+    <Compile Include="Utilities\Email\SmtpEmailService.cs" />
+    <Compile Include="Utilities\PasswordService.cs" />
+    <Compile Include="Utilities\ProfainityFilter.cs" />
+    <Compile Include="Utilities\SecureConnection.cs" />
+    <Compile Include="Utilities\SecureRandomGenerator.cs" />
+    <Compile Include="Utilities\ServiceExceptionHandler.cs" />
+    <Compile Include="Utilities\Validators\LoginDtoValidator.cs" />
+    <Compile Include="Utilities\Validators\PasswordPolicyValidator.cs" />
+    <Compile Include="Utilities\Validators\UserProfileDtoValidator.cs" />
+    <Compile Include="Utilities\Validators\UserProfileForEditDtoValidator.cs" />
+    <Compile Include="Utilities\VerificationCodeService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="DataAccess\MindWeaveDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MindWeaveDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataAccess\MindWeaveDB.edmx.diagram">
+      <DependentUpon>MindWeaveDB.edmx</DependentUpon>
+    </None>
+    <None Include="nlog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Lang.en.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Lang.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Lang.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataAccess\MindWeaveDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MindWeaveDB.edmx</DependentUpon>
+      <LastGenOutput>MindWeaveDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataAccess\MindWeaveDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MindWeaveDB.edmx</DependentUpon>
+      <LastGenOutput>MindWeaveDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="DefaultPuzzles\puzzleDefault.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultPuzzles\puzzleDefault2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultPuzzles\puzzleDefault3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VSToolsPath Condition="'$(VSToolsPath)' == '' and '$(VisualStudioVersion)' != '' and '$(VisualStudioVersion)' != '11.0'">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio</VSToolsPath>
+    <WcfServiceModelTargetPath>$(VSToolsPath)\WCF</WcfServiceModelTargetPath>
+  </PropertyGroup>
+  <Import Project="$(WcfServiceModelTargetPath)\Microsoft.VisualStudio.ServiceModel.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{3D9AD99F-2412-4246-B90B-4EAA41C64699}">
+        <WcfProjectProperties>
+          <AutoStart>True</AutoStart>
+        </WcfProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

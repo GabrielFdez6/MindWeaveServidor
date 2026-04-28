@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DatabaseConnectionError" xml:space="preserve">
+    <value>Error en la conexión con la base de datos.</value>
+  </data>
+  <data name="DatabaseErrorStartingMatch" xml:space="preserve">
+    <value>Error en la base de datos al iniciar la partida.</value>
+  </data>
+  <data name="DuplicateUserError" xml:space="preserve">
+    <value>El usuario ya existe.</value>
+  </data>
+  <data name="EmailCodeInfoGuestInvite" xml:space="preserve">
+    <value>Usa el siguiente código para unirte:</value>
+  </data>
+  <data name="EmailCodeInfoPasswordRecovery" xml:space="preserve">
+    <value>Tu código de recuperación es:</value>
+  </data>
+  <data name="EmailExpiryInfo" xml:space="preserve">
+    <value>Este código expirará en {0} minutos.</value>
+  </data>
+  <data name="EmailGreeting" xml:space="preserve">
+    <value>¡Hola {0}!</value>
+  </data>
+  <data name="EmailGreetingGuest" xml:space="preserve">
+    <value>¡Hola!</value>
+  </data>
+  <data name="EmailHowToJoinGuest" xml:space="preserve">
+    <value>Inicia Mind Weave, selecciona 'Jugar como Invitado' e ingresa este código.</value>
+  </data>
+  <data name="EmailIgnoreInfo" xml:space="preserve">
+    <value>Si no solicitaste esto, puedes ignorar este correo de forma segura.</value>
+  </data>
+  <data name="EmailInstructionGuestInvite" xml:space="preserve">
+    <value>{0} te ha invitado a unirte a una sala de rompecabezas en Mind Weave.</value>
+  </data>
+  <data name="EmailInstructionPasswordRecovery" xml:space="preserve">
+    <value>Solicitaste restablecer tu contraseña para Mind Weave.</value>
+  </data>
+  <data name="EmailInstructionVerify" xml:space="preserve">
+    <value>Gracias por registrarte. Usa el siguiente código para activar tu cuenta:</value>
+  </data>
+  <data name="EmailSubjectGuestInvite" xml:space="preserve">
+    <value>¡Te han invitado a jugar Mind Weave!</value>
+  </data>
+  <data name="EmailSubjectPasswordRecovery" xml:space="preserve">
+    <value>Recuperación de Contraseña - Mind Weave</value>
+  </data>
+  <data name="EmailSubjectVerification" xml:space="preserve">
+    <value>Código de Verificación - Mind Weave</value>
+  </data>
+  <data name="EmailWelcome" xml:space="preserve">
+    <value>¡Bienvenido a Mind Weave, {0}!</value>
+  </data>
+  <data name="ErrorAccountNotFound" xml:space="preserve">
+    <value>No se encontró una cuenta asociada a esos datos.</value>
+  </data>
+  <data name="ErrorAllFieldsRequired" xml:space="preserve">
+    <value>Todos los campos son requeridos.</value>
+  </data>
+  <data name="ErrorAvatarPathCannotBeEmpty" xml:space="preserve">
+    <value>La ruta del avatar no puede estar vacía.</value>
+  </data>
+  <data name="ErrorAvatarUpdateFailed" xml:space="preserve">
+    <value>Ocurrió un error inesperado al actualizar la ruta del avatar.</value>
+  </data>
+  <data name="ErrorCannotRemoveSelf" xml:space="preserve">
+    <value>No puedes eliminarte a ti mismo de la lista de amigos.</value>
+  </data>
+  <data name="ErrorCannotSelfFriend" xml:space="preserve">
+    <value>No puedes enviarte una solicitud de amistad a ti mismo.</value>
+  </data>
+  <data name="ErrorCommunicationChannelFailed" xml:space="preserve">
+    <value>Error al establecer el canal de comunicación.</value>
+  </data>
+  <data name="ErrorCurrentPasswordIncorrect" xml:space="preserve">
+    <value>La contraseña actual es incorrecta.</value>
+  </data>
+  <data name="ErrorEmailServiceUnavailable" xml:space="preserve">
+    <value>No se pudo enviar el correo. El servicio de email no está disponible.</value>
+  </data>
+  <data name="ErrorFriendshipNotFound" xml:space="preserve">
+    <value>No eres amigo de este jugador.</value>
+  </data>
+  <data name="ErrorGuestUsernameGenerationFailed" xml:space="preserve">
+    <value>No se pudo generar un nombre de usuario único para el invitado. Intenta con otro nombre.</value>
+  </data>
+  <data name="ErrorGuestUsernameTaken" xml:space="preserve">
+    <value>El nombre de invitado deseado '{0}' ya está en uso en esta sala. Intentando otro...</value>
+  </data>
+  <data name="ErrorInvalidInvitationData" xml:space="preserve">
+    <value>Datos de invitación inválidos. </value>
+  </data>
+  <data name="ErrorInvalidOrExpiredGuestInvite" xml:space="preserve">
+    <value>El código de invitación para este correo es inválido, ha expirado o ya fue usado.</value>
+  </data>
+  <data name="ErrorJoiningLobbyData" xml:space="preserve">
+    <value>Error al unirse a los datos del lobby.</value>
+  </data>
+  <data name="ErrorMsgServerOffline" xml:space="preserve">
+    <value>El servidor se encuentra inhabilitado. Intenta más tarde por favor.</value>
+  </data>
+  <data name="ErrorNoPendingRequestFound" xml:space="preserve">
+    <value>No se encontró una solicitud de amistad pendiente de este usuario.</value>
+  </data>
+  <data name="ErrorPlayerNotFound" xml:space="preserve">
+    <value>Jugador no encontrado.</value>
+  </data>
+  <data name="ErrorPuzzleFileNotFound" xml:space="preserve">
+    <value>Falta el archivo de imagen del rompecabezas del servidor.</value>
+  </data>
+  <data name="ErrorPuzzleUploadFailed" xml:space="preserve">
+    <value>Error del servidor durante la subida.</value>
+  </data>
+  <data name="ErrorPuzzleUploadInvalidData" xml:space="preserve">
+    <value>Datos inválidos para la subida.</value>
+  </data>
+  <data name="ErrorPuzzleUploadPlayerNotFound" xml:space="preserve">
+    <value>No se encontró el jugador que está subiendo la imagen.</value>
+  </data>
+  <data name="ErrorReadingPuzzleFile" xml:space="preserve">
+    <value>Error al leer el archivo del rompecabezas desde el almacenamiento.</value>
+  </data>
+  <data name="ErrorSavingDifficultyChange" xml:space="preserve">
+    <value>Error al guardar el cambio de dificultad.</value>
+  </data>
+  <data name="ErrorSendingGuestInvitation" xml:space="preserve">
+    <value>No se pudo enviar la invitación de invitado. Inténtalo de nuevo.</value>
+  </data>
+  <data name="ErrorServiceConnectionClosing" xml:space="preserve">
+    <value>La conexión con el servicio se está cerrando.</value>
+  </data>
+  <data name="ErrorServiceInitializationFailed" xml:space="preserve">
+    <value>Error al inicializar el servicio.</value>
+  </data>
+  <data name="ErrorSessionMismatch" xml:space="preserve">
+    <value>La sesión no coincide.</value>
+  </data>
+  <data name="ErrorUserAlreadyLoggedIn" xml:space="preserve">
+    <value>Este usuario ya ha iniciado sesión en otro dispositivo.</value>
+  </data>
+  <data name="ErrorUserNotOnline" xml:space="preserve">
+    <value>El Usuario no esta en línea</value>
+  </data>
+  <data name="FriendRemovedSuccessfully" xml:space="preserve">
+    <value>Amigo eliminado correctamente.</value>
+  </data>
+  <data name="FriendRequestAccepted" xml:space="preserve">
+    <value>Solicitud de amistad aceptada.</value>
+  </data>
+  <data name="FriendRequestAlreadySent" xml:space="preserve">
+    <value>Solicitud de amistad ya enviada y pendiente.</value>
+  </data>
+  <data name="FriendRequestReceivedFromUser" xml:space="preserve">
+    <value>Este jugador ya te ha enviado una solicitud. Respóndela.</value>
+  </data>
+  <data name="FriendRequestRejected" xml:space="preserve">
+    <value>Solicitud de amistad rechazada.</value>
+  </data>
+  <data name="FriendRequestSent" xml:space="preserve">
+    <value>Solicitud de amistad enviada.</value>
+  </data>
+  <data name="FriendshipAlreadyExists" xml:space="preserve">
+    <value>Ya eres amigo de este jugador.</value>
+  </data>
+  <data name="FriendshipStatusPreventsRequest" xml:space="preserve">
+    <value>No se puede enviar la solicitud debido a una relación existente.</value>
+  </data>
+  <data name="GenericServerError" xml:space="preserve">
+    <value>Ocurrió un error inesperado en el servidor.</value>
+  </data>
+  <data name="HostLeftLobby" xml:space="preserve">
+    <value>El anfitrión salió del lobby.</value>
+  </data>
+  <data name="InfoPasswordResetSuccess" xml:space="preserve">
+    <value>Tu contraseña ha sido restablecida correctamente. Ya puedes iniciar sesión.</value>
+  </data>
+  <data name="InfoRecoveryCodeSent" xml:space="preserve">
+    <value>Se ha enviado un código de recuperación a tu correo electrónico.</value>
+  </data>
+  <data name="KickedByHost" xml:space="preserve">
+    <value>Expulsado por el anfitrión.</value>
+  </data>
+  <data name="KickMessageProfanity" xml:space="preserve">
+    <value>Has sido expulsado por lenguaje ofensivo (3 strikes).</value>
+  </data>
+  <data name="lobbyCodeGenerationFailed" xml:space="preserve">
+    <value>Error al generar un código único para el lobby.</value>
+  </data>
+  <data name="lobbyCreatedSuccessfully" xml:space="preserve">
+    <value>Lobby creado exitosamente.</value>
+  </data>
+  <data name="LobbyDataNotFound" xml:space="preserve">
+    <value>Datos del lobby no encontrados.</value>
+  </data>
+  <data name="LobbyIsFull" xml:space="preserve">
+    <value>El lobby {0} está lleno.</value>
+  </data>
+  <data name="LobbyNoLongerAvailable" xml:space="preserve">
+    <value>El lobby {0} ya no está disponible.</value>
+  </data>
+  <data name="lobbyNotFoundOrInactive" xml:space="preserve">
+    <value>El lobby {0} no existe o está inactivo.</value>
+  </data>
+  <data name="LobbyNotInWaitingState" xml:space="preserve">
+    <value>El lobby no está en estado de espera.</value>
+  </data>
+  <data name="lobbyRegistrationFailed" xml:space="preserve">
+    <value>Error al registrar el lobby en memoria después de guardar en la base de datos.</value>
+  </data>
+  <data name="LoginAccountNotVerified" xml:space="preserve">
+    <value>Tu cuenta no ha sido verificada. Revisa tu correo</value>
+  </data>
+  <data name="LoginPasswordNotEmpty" xml:space="preserve">
+    <value>El email o la contraseña son incorrectos.</value>
+  </data>
+  <data name="LoginSuccessful" xml:space="preserve">
+    <value>Sesión iniciada.</value>
+  </data>
+  <data name="NotEnoughPlayersToStart" xml:space="preserve">
+    <value>No hay suficientes jugadores para iniciar.</value>
+  </data>
+  <data name="notHost" xml:space="preserve">
+    <value>No eres el anfitrión.</value>
+  </data>
+  <data name="PasswordChangedFailed" xml:space="preserve">
+    <value>No se pudo guardar la nueva contraseña.</value>
+  </data>
+  <data name="PasswordChangedSuccessfully" xml:space="preserve">
+    <value>Tu contraseña ha sido restablecida correctamente.</value>
+  </data>
+  <data name="PlayerAlreadyInLobby" xml:space="preserve">
+    <value>{0} ya está en el lobby.</value>
+  </data>
+  <data name="PlayerOrMatchNotFoundInDb" xml:space="preserve">
+    <value>El jugador '{0}' o la partida del lobby '{1}' no se encontraron en la base de datos.</value>
+  </data>
+  <data name="ProfileUpdatedSuccessfully" xml:space="preserve">
+    <value>Perfil actualizado correctamente</value>
+  </data>
+  <data name="ProfileUpdateFailed" xml:space="preserve">
+    <value>Error al actualizar el perfil</value>
+  </data>
+  <data name="RegistrationSuccessful" xml:space="preserve">
+    <value>Registro exitoso. Se ha enviado un código de verificación a tu correo electrónico.</value>
+  </data>
+  <data name="RegistrationUsernameOrEmailExists" xml:space="preserve">
+    <value>El nombre de usuario o el correo electrónico ya están en uso.</value>
+  </data>
+  <data name="SuccessAvatarUpdated" xml:space="preserve">
+    <value>Avatar actualizado correctamente.</value>
+  </data>
+  <data name="SuccessGuestJoinedLobby" xml:space="preserve">
+    <value>Te has unido a la sala como invitado.</value>
+  </data>
+  <data name="SuccessPuzzleUpload" xml:space="preserve">
+    <value>¡Imagen subida con éxito!</value>
+  </data>
+  <data name="SuccessPuzzleUploaded" xml:space="preserve">
+    <value>Rompecabezas subido exitosamente.</value>
+  </data>
+  <data name="ValidationDateOfBirthMinimumAge" xml:space="preserve">
+    <value>Debes tener al menos 13 años para registrarte.</value>
+  </data>
+  <data name="ValidationDateOfBirthRealistic" xml:space="preserve">
+    <value>La fecha de nacimiento no parece realista.</value>
+  </data>
+  <data name="ValidationDateOfBirthRequired" xml:space="preserve">
+    <value>La fecha de nacimiento es obligatoria</value>
+  </data>
+  <data name="ValidationEmailFormat" xml:space="preserve">
+    <value>El formato del correo electrónico no es válido.</value>
+  </data>
+  <data name="ValidationEmailRequired" xml:space="preserve">
+    <value>El correo electrónico es obligatorio.</value>
+  </data>
+  <data name="ValidationErrorDifficultyInvalid" xml:space="preserve">
+    <value>Dificultad seleccionada no válida</value>
+  </data>
+  <data name="ValidationFirstNameLength" xml:space="preserve">
+    <value>El nombre no puede exceder los 45 caracteres.</value>
+  </data>
+  <data name="ValidationFirstNameRequired" xml:space="preserve">
+    <value>El nombre es obligatorio.</value>
+  </data>
+  <data name="ValidationLastNameLength" xml:space="preserve">
+    <value>El apellido no puede exceder los 45 caracteres.</value>
+  </data>
+  <data name="ValidationLastNameRequired" xml:space="preserve">
+    <value>Los apellidos son requeridos.</value>
+  </data>
+  <data name="ValidationNoLeadingOrTrailingWhitespace" xml:space="preserve">
+    <value>El campo no puede comenzar ni terminar con espacios.</value>
+  </data>
+  <data name="ValidationOnlyLetters" xml:space="preserve">
+    <value>Este campo solo puede contener letras.</value>
+  </data>
+  <data name="ValidationPasswordComplexity" xml:space="preserve">
+    <value>La contraseña debe incluir al menos una mayúscula, una minúscula y un número</value>
+  </data>
+  <data name="ValidationPasswordLength" xml:space="preserve">
+    <value>La contraseña debe tener al menos 8 caracteres.</value>
+  </data>
+  <data name="ValidationPasswordNoSpaces" xml:space="preserve">
+    <value>La contraseña no puede contener espacios.</value>
+  </data>
+  <data name="ValidationPasswordRequired" xml:space="preserve">
+    <value>La contraseña no puede estar vacía</value>
+  </data>
+  <data name="ValidationProfileOrPasswordRequired" xml:space="preserve">
+    <value>El perfil de usuario y la contraseña son obligatorios.</value>
+  </data>
+  <data name="ValidationUserAlreadyInGame" xml:space="preserve">
+    <value>El jugador {0} ya se encuentra en una partida.</value>
+  </data>
+  <data name="ValidationUsernameAlphanumeric" xml:space="preserve">
+    <value>El nombre de usuario solo puede contener letras y números.</value>
+  </data>
+  <data name="ValidationUsernameLength" xml:space="preserve">
+    <value>El nombre de usuario debe tener entre 3 y 16 caracteres</value>
+  </data>
+  <data name="ValidationUsernameRequired" xml:space="preserve">
+    <value>El nombre de usuario no puede estar vacío.</value>
+  </data>
+  <data name="VerificationAccountAlreadyVerified" xml:space="preserve">
+    <value>Esta cuenta ya ha sido verificada.</value>
+  </data>
+  <data name="VerificationCodeInvalidFormat" xml:space="preserve">
+    <value>El código de verificación solo debe contener 6 números.</value>
+  </data>
+  <data name="VerificationEmailAndCodeRequired" xml:space="preserve">
+    <value>El correo electrónico y el código son obligatorios.</value>
+  </data>
+  <data name="VerificationEmailNotFound" xml:space="preserve">
+    <value>No se encontró una verificación pendiente para este correo.</value>
+  </data>
+  <data name="VerificationInvalidOrExpiredCode" xml:space="preserve">
+    <value>Código de verificación inválido o expirado.</value>
+  </data>
+  <data name="VerificationSuccessful" xml:space="preserve">
+    <value>Cuenta verificada correctamente. Ya puedes iniciar sesión.</value>
+  </data>
+</root>
