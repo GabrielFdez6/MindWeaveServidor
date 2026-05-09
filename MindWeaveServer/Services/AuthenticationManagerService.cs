@@ -26,6 +26,8 @@ namespace MindWeaveServer.Services
         private const string OPERATION_REGISTER = "RegisterOperation";
         private const string OPERATION_VERIFY_ACCOUNT = "VerifyAccountOperation";
         private const string OPERATION_RESEND_VERIFICATION = "ResendVerificationOperation";
+        private const string OPERATION_SEND_RECOVERY_CODE = "SendRecoveryCodeOperation";
+        private const string OPERATION_RESET_PASSWORD = "ResetPasswordOperation";
 
         private readonly AuthenticationLogic authenticationLogic;
         private readonly IServiceExceptionHandler exceptionHandler;
@@ -94,7 +96,33 @@ namespace MindWeaveServer.Services
                 throw exceptionHandler.handleException(ex, OPERATION_RESEND_VERIFICATION);
             }
         }
-    
+
+        public async Task<OperationResultDto> sendPasswordRecoveryCodeAsync(string email)
+        {
+            logger.Info("Password recovery code service request received.");
+            try
+            {
+                return await authenticationLogic.sendPasswordRecoveryCodeAsync(email);
+            }
+            catch (Exception ex)
+            {
+                throw exceptionHandler.handleException(ex, OPERATION_SEND_RECOVERY_CODE);
+            }
+        }
+
+        public async Task<OperationResultDto> resetPasswordWithCodeAsync(string email, string code, string newPassword)
+        {
+            logger.Info("Reset password service request received.");
+            try
+            {
+                return await authenticationLogic.resetPasswordWithCodeAsync(email, code, newPassword);
+            }
+            catch (Exception ex)
+            {
+                throw exceptionHandler.handleException(ex, OPERATION_RESET_PASSWORD);
+            }
+        }
+
         public void logOut(string username)
         {
             logger.Info("Logout request received.");

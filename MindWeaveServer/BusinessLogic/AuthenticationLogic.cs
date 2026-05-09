@@ -181,7 +181,80 @@ namespace MindWeaveServer.BusinessLogic
                 MessageCode = MessageCodes.AUTH_VERIFICATION_CODE_RESENT
             };
         }
-       
+
+        public async Task<OperationResultDto> sendPasswordRecoveryCodeAsync(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                return new OperationResultDto
+                {
+                    Success = false,
+                    MessageCode = MessageCodes.VALIDATION_EMAIL_REQUIRED
+                };
+            }
+
+            var player = await playerRepository.getPlayerByEmailAsync(email);
+
+            var playerValidation = validatePlayerForRecovery(player);
+            if (!playerValidation.Success)
+            {
+                return playerValidation;
+            }
+
+            await generateAndSaveNewCodeAsync(player);
+
+            var emailTemplate = new PasswordRecoveryEmailTemplate(player.username, player.verification_code);
+            await emailService.sendEmailAsync(player.email, player.username, emailTemplate);
+
+            logger.Info("Recovery code sent. PlayerId: {Id}", player.idPlayer);
+
+            return new OperationResultDto
+            {
+                Success = true,
+                MessageCode = MessageCodes.AUTH_RECOVERY_CODE_SENT
+            };
+        }
+
+        public async Task<OperationResultDto> resetPasswordWithCodeAsync(string email, string code, string newPassword)
+        {
+            var inputValidation = validateResetPasswordInput(email, code, newPassword);
+            if (!inputValidation.Success)
+            {
+                return inputValidation;
+            }
+
+            var player = await playerRepository.getPlayerByEmailAsync(email);
+            if (player == null)
+            {
+                return new OperationResultDto
+                {
+                    Success = false,
+                    MessageCode = MessageCodes.AUTH_USER_NOT_FOUND
+                };
+            }
+
+            if (!checkCodeValidity(player, code))
+            {
+                logger.Warn("Reset password failed: Invalid code. PlayerId: {Id}", player.idPlayer);
+                return new OperationResultDto
+                {
+                    Success = false,
+                    MessageCode = MessageCodes.AUTH_CODE_INVALID_OR_EXPIRED
+                };
+            }
+
+            updatePlayerPassword(player, newPassword);
+            await playerRepository.updatePlayerAsync(player);
+
+            logger.Info("Password reset successful. PlayerId: {Id}", player.idPlayer);
+
+            return new OperationResultDto
+            {
+                Success = true,
+                MessageCode = MessageCodes.AUTH_PASSWORD_RESET_SUCCESS
+            };
+        }
+
         public void logout(string username)
         {
             if (!string.IsNullOrWhiteSpace(username))
@@ -368,7 +441,47 @@ namespace MindWeaveServer.BusinessLogic
 
             return new OperationResultDto { Success = true };
         }
-    
+
+        private OperationResultDto validateResetPasswordInput(string email, string code, string newPassword)
+        {
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(code) || string.IsNullOrWhiteSpace(newPassword))
+            {
+                return new OperationResultDto
+                {
+                    Success = false,
+                    MessageCode = MessageCodes.VALIDATION_FIELDS_REQUIRED
+                };
+            }
+
+            if (!isVerificationCodeValidFormat(code))
+            {
+                return new OperationResultDto
+                {
+                    Success = false,
+                    MessageCode = MessageCodes.VALIDATION_CODE_INVALID_FORMAT
+                };
+            }
+
+            var passwordValidation = passwordPolicyValidator.validate(newPassword);
+            if (!passwordValidation.Success)
+            {
+                if (string.IsNullOrEmpty(passwordValidation.MessageCode))
+                {
+                    passwordValidation.MessageCode = MessageCodes.VALIDATION_GENERAL_ERROR;
+                }
+                return passwordValidation;
+            }
+
+            return new OperationResultDto { Success = true };
+        }
+
+        private void updatePlayerPassword(Player player, string newPassword)
+        {
+            player.password_hash = passwordService.hashPassword(newPassword);
+            player.verification_code = null;
+            player.code_expiry_date = null;
+        }
+
         private async Task<OperationResultDto> validateRegistrationInputAsync(UserProfileDto userProfile, string password)
         {
             if (userProfile == null)
